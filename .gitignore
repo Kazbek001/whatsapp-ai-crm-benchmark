@@ -1,24 +1,27 @@
-# Compiled class file
+# Java / Maven
+target/
 *.class
 
-# Log file
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Logs and generated reports
 *.log
+logs/
+results/*.csv
 
-# BlueJ files
-*.ctxt
+# Python / notebooks
+.venv/
+__pycache__/
+.ipynb_checkpoints/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# OS files
+.DS_Store
+Thumbs.db
