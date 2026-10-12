@@ -1,0 +1,10 @@
+name: build
+on: [push]
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: mkdir -p results
+      - run: docker build -t whatsapp-ai-crm-benchmark .
+      - run: docker run --rm -v "$PWD/results:/app/results" whatsapp-ai-crm-benchmark
