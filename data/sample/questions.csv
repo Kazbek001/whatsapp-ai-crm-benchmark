@@ -1,0 +1,11 @@
+id,question,expected_intent
+Q01,What is the price of your service?,pricing
+Q02,How much does it cost?,pricing
+Q03,What are your business hours?,business_hours
+Q04,Are you open today?,business_hours
+Q05,How can I contact the sales manager?,sales
+Q06,I need more information,information
+Q07,Hello can you help me?,support
+Q08,I want to ask about a service,support
+Q09,Can you send more details?,information
+Q10,I have a question about something else,fallback
