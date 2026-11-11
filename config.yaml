@@ -1,0 +1,15 @@
+# Experiment configuration (flat key: value; read by benchmark.Main)
+dataset_path: data/sample/questions.csv
+output_path: results/benchmark_results.csv
+
+# Planned parameters for the LLM stage (not yet read by the code)
+system_under_test: rule_based
+llm_provider: none
+llm_model: ""
+temperature: 0.0
+timeout_ms: 30000
+repetitions: 3
+seed: 42
+p95_latency_max_ms: 5000
+api_error_rate_max_percent: 5
+crm_completeness_min_percent: 90

@@ -1,0 +1,10 @@
+{
+  "captured_utc": "2026-11-11T10:52:12.520864+00:00",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "visible_cpu_count": 9,
+  "python": "3.12.14",
+  "java": "openjdk version \"21.0.13\" 2026-10-20",
+  "model": "Qwen2.5-0.5B-Instruct Q4_K_M",
+  "runner": "llama.cpp b6500"
+}

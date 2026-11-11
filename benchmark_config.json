@@ -1,0 +1,11 @@
+{
+  "model": "Qwen2.5-0.5B-Instruct Q4_K_M",
+  "runner": "llama.cpp b6500",
+  "dataset": "data/sample/evaluation_questions.csv",
+  "seed": 42,
+  "repetitions": 3,
+  "concurrency_levels": [1, 2],
+  "warmup_requests_per_level": 4,
+  "timeout_seconds": 30,
+  "temperature": 0.0
+}

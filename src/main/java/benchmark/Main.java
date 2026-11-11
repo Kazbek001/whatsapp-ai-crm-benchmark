@@ -1,10 +1,13 @@
 
 package benchmark;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -13,6 +16,11 @@ import java.util.Map;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        if (args.length == 1 && args[0].equals("--stream")) {
+            runStream();
+            return;
+        }
+
         Map<String, String> config = loadConfig(Path.of("config.yaml"));
 
         Path input = Path.of(config.getOrDefault(
@@ -86,6 +94,22 @@ public class Main {
         System.out.printf("Intent accuracy: %.2f%%%n", accuracy);
         System.out.printf("Average latency: %.3f ms%n", averageLatency);
         System.out.println("Report: " + output);
+    }
+
+    private static void runStream() throws IOException {
+        try (BufferedReader input = new BufferedReader(
+                new InputStreamReader(System.in, StandardCharsets.UTF_8))) {
+            String encoded;
+            while ((encoded = input.readLine()) != null) {
+                String question = new String(
+                        Base64.getDecoder().decode(encoded), StandardCharsets.UTF_8);
+                String intent = classifyIntent(question);
+                String answer = generateRuleBasedAnswer(intent);
+                String encodedAnswer = Base64.getEncoder()
+                        .encodeToString(answer.getBytes(StandardCharsets.UTF_8));
+                System.out.println(intent + "\t" + encodedAnswer);
+            }
+        }
     }
 
     private static String classifyIntent(String question) {

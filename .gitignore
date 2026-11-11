@@ -25,3 +25,9 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Commit the compact reference capture and its metadata only
+/data/raw/*
+!/data/raw/test_run.jsonl
+!/data/raw/test_run.metadata.json
+*.gguf
