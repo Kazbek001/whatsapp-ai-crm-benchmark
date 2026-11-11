@@ -2,7 +2,7 @@
 # WhatsApp AI CRM Benchmark
 
 ## Authors
-Kazbek001 — Individual Research Project
+Kazybek Kanal— Individual Research Project
 
 ## Overview
 This project evaluates an AI-powered customer service assistant for WhatsApp with a planned CRM integration. The experiment compares a rule-based baseline with an LLM-powered assistant using a common set of test queries.
